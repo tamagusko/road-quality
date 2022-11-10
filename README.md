@@ -2,7 +2,7 @@
 
 TLDR... Data from 2019....
 
-![Concept](https://github.com/tamagusko/road_quality/raw/main/img/miniature.png)
+![Concept](img/miniature.png)
 
 [Interactive map](http://roadquality.tamagusko.com/)
 
