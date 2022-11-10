@@ -33,24 +33,23 @@ with st.sidebar:
 
 # pages
 if page == "Home":
+    # sidebar
     center_input = st.sidebar.text_input('Search:', 'Europe')
     center = get_coordinates(center_input)
     st.sidebar.caption("World data available. Type a country or continent.")
-    # two columns page
-    left, right = st.columns(2)
-    with left:
-        data = "data/world-road-quality.csv"
-        road_quality_map(data, center)
-        st.caption("Note: Gray countries have no data available.")
+    # body
+    st.title("World Road Quality")
+    data = "data/world-road-quality.csv"
+    road_quality_map(data, center)
+    st.caption("Note: Gray countries have no data available.")
 
-    with right:
-        render_markdown("home.md")
+    render_markdown("pages/home.md")
 
 elif page == "Analysis":
-    render_markdown("analysis.md")
+    render_markdown("pages/analysis.md")
 
 elif page == "Data statement":
-    render_markdown("data.md")
+    render_markdown("pages/data.md")
 
 elif page == "About":
     render_markdown("README.md")

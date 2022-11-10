@@ -4,6 +4,7 @@ from __future__ import annotations
 import folium
 import pandas as pd
 import geopandas as gpd
+import streamlit as st
 
 from streamlit_folium import folium_static
 
@@ -18,22 +19,30 @@ def road_quality_map(data: str, center: list) -> None:
     countries = list(df.name)
     gdf = df_world[df_world["name"].isin(countries)]
 
+    # rename name column to country
+    df = df.rename(columns={'name': 'country'})
+    gdf = gdf.rename(columns={'name': 'country'})
+
     # countries with no data
     no_data = df_world[~df_world["name"].isin(countries)]
 
     # clean geo data
-    gdf = gdf[["name", "continent", "geometry"]]
+    gdf = gdf[["country", "continent", "geometry"]]
+    # add road quality data to geo data
+    gdf = pd.merge(gdf, df, how='right', on=['country'])
+    # clean data
+    gdf = gdf.dropna()
 
     # create map
     Map = folium.Map(location=center, tiles="CartoDB Positron", zoom_start=4)
-    folium.Choropleth(
+    cp = folium.Choropleth(
         geo_data=gdf,
         name="choropleth",
         data=df,
-        columns=["name", "quality_road"],
-        key_on="feature.properties.name",
+        columns=["country", "quality_road"],
+        key_on="feature.properties.country",
         fill_color="RdYlBu",
-        fill_opacity=0.7,
+        fill_opacity=0.8,
         line_opacity=0.2,
         legend_name="Quality of road infrastructure (1 = extremely poor; 7 = extremely good)",
     ).add_to(Map)
@@ -48,6 +57,9 @@ def road_quality_map(data: str, center: list) -> None:
             "weight": 1,
         },
     ).add_to(Map)
+
+    # add tooltip values
+    folium.GeoJsonTooltip(['country', 'quality_road']).add_to(cp.geojson)
 
     folium.LayerControl().add_to(Map)
     folium_static(Map)

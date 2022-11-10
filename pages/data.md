@@ -10,4 +10,4 @@ The answers should be between 1 and 7, with 1 being considered extremely poor, a
 
 ## References
 
-World Economic Forum (2019). The Global Competitiveness Report 2019. URL: [www.weforum.org/gcr](www.weforum.org/gcr)
+World Economic Forum (2019). The Global Competitiveness Report 2019. URL: [www.weforum.org/gcr](https://www.weforum.org/gcr)
