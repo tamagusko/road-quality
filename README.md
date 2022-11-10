@@ -4,7 +4,7 @@ TLDR... Data from 2019....
 
 ![]() - Print image
 
-[Interactive map](http://roadviz.tamagusko.com/)
+[Interactive map](http://roadquality.tamagusko.com/)
 
 by [Tiago Tamagusko](https://github.com/tamagusko)
 

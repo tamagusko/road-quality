@@ -3,42 +3,56 @@ from __future__ import annotations
 
 import streamlit as st
 
-from about import about
-from fatalities import fatalities
-from quality import quality
+from streamlit_option_menu import option_menu
+from utils.render_markdown import render_markdown
+from utils.coordinates import get_coordinates
+from createMap import road_quality_map
 
 # page config
 st.set_page_config(
-    page_title='Road Vizualization', page_icon=':earth_americas:',
-    layout='wide', initial_sidebar_state='auto', menu_items=None,
-)
-page = 'Road Quality'  # Home
-
-# basemap selection
-basemap = st.sidebar.selectbox(
-    'Base map:', (
-        'CartoDB positron',
-        'OpenStreetMap',
-        'Stamen Terrain',
-        'Stamen Toner',
-        'CartoDB dark_matter',
-    ),
+    page_title="Road Quality",
+    page_icon=":earth_americas:",
+    layout="wide",
+    initial_sidebar_state="auto",  # use collapsed to hide sidebar
+    menu_items={
+        'Get Help': 'mailto:tamagusko@gmail.com',
+        'Report a bug': "https://github.com/tamagusko/road-quality/issues",
+        'About': "Copyright 2022 [Tiago Tamagusko](https://github.com/tamagusko)"
+    }
 )
 
-# add horizontal line
+# sidebar
 with st.sidebar:
-    st.write('---')
-
-page = st.sidebar.selectbox(
-    'Page:', ('Road Quality', 'Traffic Fatalities (Europe)', 'About'),
-)
+    page = option_menu(
+        None,
+        ["Home", "Analysis", "Data statement", "About"],
+        icons=["house", "justify", "clipboard-data", "file-person"],
+        menu_icon="cast",
+        default_index=0,
+    )
 
 # pages
-if page == 'Road Quality':
-    quality(basemap)
+if page == "Home":
+    center_input = st.sidebar.text_input('Search:', 'Europe')
+    center = get_coordinates(center_input)
+    st.sidebar.caption("World data available. Type a country or continent.")
+    # two columns page
+    left, right = st.columns(2)
+    with left:
+        data = "data/world-road-quality.csv"
+        road_quality_map(data, center)
+        st.caption("Note: Gray countries have no data available.")
 
-elif page == 'Traffic Fatalities (Europe)':
-    fatalities(basemap)
+    with right:
+        render_markdown("home.md")
 
-elif page == 'About':
-    about()
+elif page == "Analysis":
+    render_markdown("analysis.md")
+
+elif page == "Data statement":
+    render_markdown("data.md")
+
+elif page == "About":
+    render_markdown("README.md")
+
+st.caption("© 2022 [Tiago Tamagusko](https://github.com/tamagusko)")
