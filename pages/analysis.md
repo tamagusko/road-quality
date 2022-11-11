@@ -5,6 +5,12 @@
 - Best: Netherlands, Switzerland, Austria, Portugal.
 - Worst: Moldova, Bosnia and Herzegovina, Ukraine, Romania.
 
+### Key insights
+
+- The score developed based on extensiveness and condition penalizes countries with low population density.
+- Western Europe has a better-rated road infrastructure than Eastern Europe.
+- There are positive (Croatia) and negative (Belgium and Italy) outliers in Europe.
+
 ### Tendencies
 
 There is a tendency for eastern countries to have better-rated highways. A positive outlier is Croatia's 6th, with a score of 5.6, which has a considerably better road network than its neighbors. There are also two negative outliers; Belgium (4.4) and Italy (4.4) have worse scores than their neighbors, slightly below the European average of 4.45. One point to note is that the score considers extensiveness and condition, so sparsely populated countries tend to have worse ratings.
