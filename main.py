@@ -52,6 +52,6 @@ elif page == "Data statement":
     render_markdown("data/README.md")
 
 elif page == "About":
-    render_markdown("README.md")
+    render_markdown("pages/analysis.md")
 
 st.caption("© 2022 [Tiago Tamagusko](https://github.com/tamagusko)")
