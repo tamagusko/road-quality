@@ -19,15 +19,14 @@ import streamlit as st
 
 
 def render_markdown(filename: str) -> None:
-    """Create something great.
+    """Render the content on markdown file.
 
     Args:
-        param1: filename (plus path) to markdown file
+        filename: filename (plus path) to markdown file
 
     Returns:
         print markdown file on Streamlit
     """
-    # render the content on markdown file
     with open(filename, "r") as f:
         text = f.read()
     body = markdown.markdown(text)

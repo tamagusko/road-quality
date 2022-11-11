@@ -26,7 +26,6 @@ def get_coordinates(address: str):
     Returns:
         latitude, longitude
     """
-
     locator = Nominatim(user_agent="myGeocode", timeout=10)
     try:
         location = locator.geocode(address)

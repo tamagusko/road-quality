@@ -4,8 +4,10 @@
 Long description of module.
 
 Example:
+
     # short explanation of example
     function(param)
+
     Return:
         expected result
 
@@ -15,7 +17,6 @@ Todo:
 Source:
     Some reference to the source of the code
 """
-# imports
 from __future__ import annotations
 
 

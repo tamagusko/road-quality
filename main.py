@@ -1,5 +1,4 @@
 # (c) Tiago Tamagusko 2022
-"""Simple Streamlit app to show road quality map."""
 from __future__ import annotations
 
 import streamlit as st
