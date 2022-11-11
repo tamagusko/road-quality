@@ -1,15 +1,15 @@
 # (c) Tiago Tamagusko 2022
+"""Create map with road quality data."""
 from __future__ import annotations
 
 import folium
-import pandas as pd
 import geopandas as gpd
-import streamlit as st
-
+import pandas as pd
 from streamlit_folium import folium_static
 
 
 def road_quality_map(data: str, center: list) -> None:
+    """Create a map with road quality data."""
     # download geojson data
     df_world = gpd.read_file(gpd.datasets.get_path("naturalearth_lowres"))
 
@@ -20,8 +20,8 @@ def road_quality_map(data: str, center: list) -> None:
     gdf = df_world[df_world["name"].isin(countries)]
 
     # rename name column to country
-    df = df.rename(columns={'name': 'country'})
-    gdf = gdf.rename(columns={'name': 'country'})
+    df = df.rename(columns={"name": "country"})
+    gdf = gdf.rename(columns={"name": "country"})
 
     # countries with no data
     no_data = df_world[~df_world["name"].isin(countries)]
@@ -29,7 +29,7 @@ def road_quality_map(data: str, center: list) -> None:
     # clean geo data
     gdf = gdf[["country", "continent", "geometry"]]
     # add road quality data to geo data
-    gdf = pd.merge(gdf, df, how='right', on=['country'])
+    gdf = pd.merge(gdf, df, how="right", on=["country"])
     # clean data
     gdf = gdf.dropna()
 
@@ -59,7 +59,7 @@ def road_quality_map(data: str, center: list) -> None:
     ).add_to(Map)
 
     # add tooltip values
-    folium.GeoJsonTooltip(['country', 'quality_road']).add_to(cp.geojson)
+    folium.GeoJsonTooltip(["country", "quality_road"]).add_to(cp.geojson)
 
     folium.LayerControl().add_to(Map)
     folium_static(Map)

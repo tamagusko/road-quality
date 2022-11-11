@@ -1,6 +1,5 @@
 # (c) Tiago Tamagusko 2022
-"""
-Transforms an address into coordinates.
+"""Transforms an address into coordinates.
 
 Usage:
     get_coordinates(address)
@@ -19,7 +18,16 @@ from geopy.geocoders import Nominatim
 
 
 def get_coordinates(address: str):
-    locator = Nominatim(user_agent='myGeocode', timeout=10)
+    """Return coordinates (lat, lon) of address.
+
+    Args:
+        address: Country, city, street, continent, etc.
+
+    Returns:
+        latitude, longitude
+    """
+
+    locator = Nominatim(user_agent="myGeocode", timeout=10)
     try:
         location = locator.geocode(address)
         return location.latitude, location.longitude
