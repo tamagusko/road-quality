@@ -49,7 +49,7 @@ elif page == "Analysis":
     render_markdown("pages/analysis.md")
 
 elif page == "Data statement":
-    render_markdown("pages/data.md")
+    render_markdown("data/README.md")
 
 elif page == "About":
     render_markdown("README.md")
