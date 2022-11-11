@@ -9,7 +9,15 @@ from streamlit_folium import folium_static
 
 
 def road_quality_map(data: str, center: list) -> None:
-    """Create a map with road quality data."""
+    """Create a map with road quality data.
+
+    Args:
+        data: csv file (plus path) with road quality data.
+        center: Center (lat, lon) of the map.
+
+    Returns:
+        Map with road quality data.
+    """
     # download geojson data
     df_world = gpd.read_file(gpd.datasets.get_path("naturalearth_lowres"))
 

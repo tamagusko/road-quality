@@ -1,13 +1,8 @@
 # (c) Tiago Tamagusko 2022
 """Transforms an address into coordinates.
 
-Usage:
-    get_coordinates(address)
-    Return:
-        (LATITUDE, LONGITUDE)
-
 Example:
-    # Returns the coordinates of Berlin
+    # Get the coordinates of Berlin.
     get_coordinates('Berlin, Germany')
     Return:
         (52.5170365, 13.3888599)

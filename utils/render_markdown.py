@@ -1,13 +1,8 @@
 # (c) Tiago Tamagusko 2022
 """Render markdown file on Streamlit.
 
-Usage:
-    render_markdown(filename.md)
-    Return:
-        print markdown file on Streamlit
-
 Example:
-    # Render README.md
+    # Render README.md into app.
     render_markdown(README.md)
     Return:
         print README.md on Streamlit
