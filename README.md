@@ -26,6 +26,8 @@ Found a bug or have any suggestions? Open an issue [here](https://github.com/tam
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request
 
+Look at [TODO.md](https://github.com/tamagusko/road-quality/blob/main/TODO.md) for some suggestions.
+
 ---
 
 © 2022 Tiago Tamagusko.
