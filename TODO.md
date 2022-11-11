@@ -4,3 +4,4 @@
 - Style the GeoJsonTooltip in createMap.py.
 - Add world shp to replace naturalearth_lowres (missing countries in this dataset).
 - Create form to add user analysis.
+- Add more information and filters (split home into 2 columns: left -> map right -> filters)
