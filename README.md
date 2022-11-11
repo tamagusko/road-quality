@@ -4,7 +4,7 @@
 
 To read my preliminary data analysis, visit [here](https://github.com/tamagusko/road-quality/blob/main/pages/analysis.md).
 
-Access the data statement [here](https://github.com/tamagusko/road-quality/blob/main/pages/data.md).
+Access the data statement [here](https://github.com/tamagusko/road-quality/tree/main/data).
 
 ![](img/miniature.png)
 
