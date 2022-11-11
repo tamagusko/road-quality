@@ -16,7 +16,7 @@ Tiago Tamagusko – [@tamagusko](https://github.com/tamagusko)
 
 ## Bugs?
 
-Found a bug or have any suggestions? Open an issue by clicking [here](https://github.com/tamagusko/road-quality/issues).
+Found a bug or have any suggestions? Open an issue [here](https://github.com/tamagusko/road-quality/issues).
 
 ## Contributing
 
