@@ -36,7 +36,7 @@ if page == "Home":
     # sidebar
     center_input = st.sidebar.text_input("Search:", "Europe")
     center = get_coordinates(center_input)
-    st.sidebar.caption("World data avaiglable. Type a country or continent.")
+    st.sidebar.caption("Worldwide data available. Type a country or continent.")
     # body
     st.title("World Road Quality")
     data = "data/world-road-quality.csv"
