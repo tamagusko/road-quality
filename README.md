@@ -8,7 +8,7 @@ Access the data statement [here](https://github.com/tamagusko/road-quality/tree/
 
 ![](img/miniature.png)
 
-[Open interactive map](http://roadquality.tamagusko.com/)
+[Open interactive map](https://roadquality.tamagusko.com/)
 
 ## Author
 
