@@ -9,5 +9,3 @@ Found a bug or have any suggestions? Open an issue [here](https://github.com/tam
 ---
 
 Open Source Project. Please see [LICENSE](https://github.com/tamagusko/road-quality/blob/main/LICENSE) for details.
-
-© 2022 Tiago Tamagusko.

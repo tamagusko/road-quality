@@ -17,10 +17,10 @@ def render_markdown(filename: str) -> None:
     """Render the content on markdown file.
 
     Args:
-        filename: filename (plus path) to markdown file
+        filename: filename (plus path) to markdown file.
 
     Returns:
-        print markdown file on Streamlit
+        print markdown file on Streamlit.
     """
     with open(filename, "r") as f:
         text = f.read()
