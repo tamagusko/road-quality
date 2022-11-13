@@ -1,6 +1,6 @@
 ## Author
 
-Tiago Tamagusko – [@tamagusko](https://github.com/tamagusko)
+Tiago Tamagusko [@tamagusko](https://github.com/tamagusko)
 
 ## Bugs?
 
