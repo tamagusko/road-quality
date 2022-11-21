@@ -1,6 +1,10 @@
 ## Author
 
-Tiago Tamagusko [@tamagusko](https://github.com/tamagusko)
+[Tiago Tamagusko](https://github.com/tamagusko)
+
+How to cite?
+
+T. Tamagusko, "World Road Quality", 2022. Last accesed on 2022-11-21. [Online] Available: https://roadquality.tamagusko.com.
 
 ## Bugs?
 
