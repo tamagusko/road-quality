@@ -10,6 +10,7 @@ Example:
 from __future__ import annotations
 
 from geopy.geocoders import Nominatim
+from geopy.exc import GeocoderUnavailable, GeocoderTimedOut
 
 
 def get_coordinates(address: str):
@@ -19,11 +20,13 @@ def get_coordinates(address: str):
         address: Country, city, street, continent, etc.
 
     Returns:
-        latitude, longitude
+        latitude, longitude or None if unavailable
     """
     locator = Nominatim(user_agent="myGeocode", timeout=10)
     try:
         location = locator.geocode(address)
-        return location.latitude, location.longitude
-    except AttributeError:
+        if location:
+            return location.latitude, location.longitude
         return None  # If the address is not found, return None
+    except (AttributeError, GeocoderUnavailable, GeocoderTimedOut):
+        return None  # If geocoding fails for any reason, return None

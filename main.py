@@ -32,6 +32,9 @@ if page == "Home":
     # Home only sidebar
     center_input = st.sidebar.text_input("Search:", "Europe")
     center = get_coordinates(center_input)
+    if center is None:
+        center = (50.0, 10.0)  # Default to Europe coordinates
+        st.sidebar.warning("Could not find location. Using default view.")
     st.sidebar.caption(
         "Worldwide data available. Type a country or continent.",
     )
